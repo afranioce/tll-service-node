@@ -21,7 +21,7 @@ export class DepartamentoService {
   }
 
   create(criarDepartamentoDto: CriarDepartamentoDto) {
-    return this.departamentoRepository.create(criarDepartamentoDto);
+    return this.departamentoRepository.save(criarDepartamentoDto);
   }
 
   update(id: number, atualizarDepartamentoDto: AtualizarDepartamentoDto) {

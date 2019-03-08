@@ -31,7 +31,7 @@ export class FuncionarioService {
   }
 
   create(criarFuncionarioDto: CriarfuncionarioDto): any {
-    return this.funcionarioRepository.create(criarFuncionarioDto);
+    return this.funcionarioRepository.save(criarFuncionarioDto);
   }
 
   update(id: number, atualizarFuncionarioDto: AtualizarFuncionarioDto): any {

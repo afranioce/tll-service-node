@@ -21,7 +21,7 @@ export class MovimentacaoService {
   }
 
   create(criarMovimentacaoDto: CriarMovimentacaoDto) {
-    return this.movimentacaoRepository.create(criarMovimentacaoDto);
+    return this.movimentacaoRepository.save(criarMovimentacaoDto);
   }
 
   update(id: number, atualizarMovimentacaoDto: AtualizarMovimentacaoDto) {
