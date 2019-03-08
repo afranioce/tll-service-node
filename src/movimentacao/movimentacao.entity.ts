@@ -12,7 +12,7 @@ export class Movimentacao {
   @Column({ length: 500, nullable: true })
   descricao: string;
 
-  @ManyToOne(type => Funcionario)
+  @ManyToOne(type => Funcionario, { eager: true })
   @JoinColumn()
   funcionario: Funcionario;
 }

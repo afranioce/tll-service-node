@@ -10,7 +10,7 @@ export class Funcionario {
   @Column({ length: 200 })
   nome: string;
 
-  @ManyToOne(type => Departamento)
+  @ManyToOne(type => Departamento, { eager: true })
   @JoinColumn()
   departamento: Departamento;
 

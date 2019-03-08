@@ -1,14 +1,13 @@
-import {IsInt, MaxLength, IsCurrency, IsNotEmpty, IsOptional} from "class-validator";
+import { MaxLength, IsCurrency, IsOptional, IsNotEmpty, IsInt } from "class-validator";
 
 export class CriarMovimentacaoDto {
-    @IsNotEmpty()
-    @IsInt()
-    id: number;
+  @IsCurrency()
+  valor: number;
 
-    @IsCurrency()
-    valor: number;
+  @MaxLength(500)
+  @IsOptional()
+  descricao: string;
 
-    @MaxLength(500)
-    @IsOptional()
-    descricao: string;
+  @IsNotEmpty()
+  funcionario: { id: number };
 }
