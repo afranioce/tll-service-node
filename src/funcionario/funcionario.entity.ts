@@ -1,4 +1,3 @@
-
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { Departamento } from '../departamento/departamento.entity';
 import { Movimentacao } from '../movimentacao/movimentacao.entity';

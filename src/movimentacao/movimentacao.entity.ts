@@ -1,4 +1,3 @@
-
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Funcionario } from '../funcionario/funcionario.entity';
 
@@ -7,10 +6,10 @@ export class Movimentacao {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ type: 'decimal' })
   valor: number;
 
-  @Column({ length: 500 })
+  @Column({ length: 500, nullable: true })
   descricao: string;
 
   @ManyToOne(type => Funcionario)

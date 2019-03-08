@@ -1,17 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { DepartamentoController } from './departamento/departamento.controller';
-import { FuncionarioController } from './funcionario/funcionario.controller';
-import { MovimentacaoController } from './movimentacao/movimentacao.controller';
-import { DepartamentoService } from './departamento/departamento.service';
-import { FuncionarioService } from './funcionario/funcionario.service';
-import { MovimentacaoService } from './movimentacao/movimentacao.service';
+import { DepartamentoModule } from './departamento/departamento.module';
+import { FuncionarioModule } from './funcionario/funcionario.module';
+import { MovimentacaoModule } from './movimentacao/movimentacao.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot()],
-  controllers: [AppController, DepartamentoController, FuncionarioController, MovimentacaoController],
-  providers: [AppService, DepartamentoService, FuncionarioService, MovimentacaoService],
+  imports: [TypeOrmModule.forRoot(), DepartamentoModule, FuncionarioModule, MovimentacaoModule],
 })
 export class AppModule {}

@@ -12,23 +12,23 @@ export class DepartamentoService {
     private readonly departamentoRepository: Repository<Departamento>,
   ) { }
 
-  async findAll(): Promise<Departamento[]> {
-    return await this.departamentoRepository.find();
+  findAll(): Promise<Departamento[]> {
+    return this.departamentoRepository.find();
   }
 
-  async findOne(id: number): Promise<Departamento> {
-    return await this.departamentoRepository.findOne(id);
+  findOne(id: number): Promise<Departamento> {
+    return this.departamentoRepository.findOne(id);
   }
 
-  async create(criarDepartamentoDto: CriarDepartamentoDto) {
-    return await this.departamentoRepository.insert(criarDepartamentoDto);
+  create(criarDepartamentoDto: CriarDepartamentoDto) {
+    return this.departamentoRepository.create(criarDepartamentoDto);
   }
 
-  async update(id: number, atualizarDepartamentoDto: AtualizarDepartamentoDto) {
-    return await this.departamentoRepository.update(id, atualizarDepartamentoDto);
+  update(id: number, atualizarDepartamentoDto: AtualizarDepartamentoDto) {
+    return this.departamentoRepository.update(id, atualizarDepartamentoDto);
   }
 
-  async delete(id: number) {
-    return await this.departamentoRepository.delete(id);
+  delete(id: number) {
+    return this.departamentoRepository.delete(id);
   }
 }
